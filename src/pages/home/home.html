@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Navigate file</h2>
+
+  <ion-card *ngFor="let item of items">
+    <ng-template [ngIf]="item.isDirectory">
+      <ion-card-header>item.name</ion-card-header>
+
+      <ion-list>
+        <ion-card
+          ion-item>
+          {{ item.name }}
+        </ion-card>
+      </ion-list>
+    </ng-template>
+
+    <ng-template [ngIf]="item.isFile">
+      <ion-card
+        ion-item>
+        {{ item.name }}
+      </ion-card>
+    </ng-template>
+
+  </ion-card>
+</ion-content>
